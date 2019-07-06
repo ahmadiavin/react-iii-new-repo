@@ -14,6 +14,18 @@ class App extends Component {
     };
   }
   
+  handleDelete = () => {
+    let indexDelete = [...this.state.users];
+    indexDelete.splice(this.state.userNum, 1);
+    let index; 
+    if (this.state.users.length > 1 && this.state.userNum === this.state.users.length -1) {
+      index = this.state.userNum -1;
+    } else {
+      index = this.state.userNum;
+    }
+    this.setState({users: indexDelete, userNum: index})
+  }
+
   handleIndexIncrease = () =>{
     let indexAdd = this.state.userNum;
     if (indexAdd === this.state.users.length - 1) {
@@ -66,6 +78,7 @@ class App extends Component {
           users={users}
           userNumAdd={this.handleIndexIncrease}
           userNumDecrease={this.handleIndexDecrease}
+          userDelete={this.handleDelete}
 
          
           

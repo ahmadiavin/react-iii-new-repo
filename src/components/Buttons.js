@@ -8,7 +8,7 @@ class Buttons extends Component {
                </div>
             <div className="stupidbuttons">
                 <button>{"Edit"}</button>
-                <button>{"Delete"}</button>
+                <button onClick={() => this.props.userDelete()}>{"Delete"}</button>
                 <button>{"New"}</button>
            </div>
             
